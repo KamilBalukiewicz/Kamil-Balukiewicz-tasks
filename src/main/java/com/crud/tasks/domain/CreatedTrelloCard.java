@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,9 +19,9 @@ public class CreatedTrelloCard {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("badges")
-    private Badges badges;
-
     @JsonProperty("shortUrl")
     private String shortUrl;
+
+    //@JsonProperty("badges")
+    //private Badges badges;
 }
