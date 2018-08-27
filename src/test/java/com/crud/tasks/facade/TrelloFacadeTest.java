@@ -99,7 +99,7 @@ public class TrelloFacadeTest {
     }
     @Test
     public void shouldCreateCard() {
-        //given
+        //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto("test", "test desc",
                 "top", "1");
 
@@ -112,9 +112,9 @@ public class TrelloFacadeTest {
         when(trelloService.createTrelloCard(trelloCardDto)).thenReturn(createdTrelloCardDto);
         when(trelloMapper.mapToCard(trelloCardDto)).thenReturn(mappedTrelloCard);
         when(trelloMapper.mapToCardDto(anyObject())).thenReturn(trelloCardDto);
-        //when
+        //When
         CreatedTrelloCardDto theCard = trelloFacade.createCard(trelloCardDto);
-        //then
+        //Then
         assertEquals("1", theCard.getId());
         assertEquals("test name", theCard.getName());
         assertEquals("test.com", theCard.getShortUrl());
