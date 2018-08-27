@@ -1,8 +1,6 @@
 package com.crud.tasks.trello.client;
 
-import com.crud.tasks.domain.CreatedTrelloCardDto;
-import com.crud.tasks.domain.TrelloBoardDto;
-import com.crud.tasks.domain.TrelloCardDto;
+import com.crud.tasks.domain.*;
 import com.crud.tasks.trello.config.TrelloConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -77,7 +75,7 @@ public class TrelloClientTest {
                 "1",
                 "Test task",
                 "http://test.com",
-                null
+                new Badges(1, new AttachmentsByType(new Trello(1, 1)))
         );
 
         when(restTemplate.postForObject(uri, null, CreatedTrelloCardDto.class)).thenReturn(createdTrelloCardDto);
@@ -89,6 +87,9 @@ public class TrelloClientTest {
         assertEquals("1", newCard.getId());
         assertEquals("Test task", newCard.getName());
         assertEquals("http://test.com", newCard.getShortUrl());
+        assertEquals(1, newCard.getBadges().getAttachmentsByType().getTrello().getCard());
+        assertEquals(1, newCard.getBadges().getAttachmentsByType().getTrello().getBoard());
+        assertEquals(1, newCard.getBadges().getVotes());
 
     }
 
