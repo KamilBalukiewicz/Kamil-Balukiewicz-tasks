@@ -44,9 +44,4 @@ public class TaskController {
         service.saveTask(taskMapper.mapToTask(taskDto));
     }
 
-    /*@RequestMapping(method = RequestMethod.GET, value = "getTaskWithId")
-    public TaskDto getTaskWithId(Long id) {
-        return taskMapper.mapToTaskDto(service.getTaskById(1L));
-    }*/
-
 }

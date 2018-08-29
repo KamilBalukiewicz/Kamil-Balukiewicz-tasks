@@ -22,14 +22,6 @@ public class TrelloController {
     public List<TrelloBoardDto> getTrelloBoards() {
 
         return trelloFacade.fetchTrelloBoards();
-
-        /*trelloBoards.stream()
-                .filter(trelloBoardDto -> trelloBoardDto.getId() != null)
-                .filter(trelloBoardDto -> trelloBoardDto.getName() != null)
-                .filter(trelloBoardDto -> trelloBoardDto.getName().contains("Kodilla"))
-                .forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName()));
-
-    }*/
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
