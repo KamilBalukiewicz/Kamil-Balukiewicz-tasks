@@ -25,7 +25,7 @@ public class TrelloMapperTest {
         List<TrelloListDto> list1 = new ArrayList<>();
         list1.add(new TrelloListDto("1", "list1", false));
         List<TrelloBoardDto> trelloBoardsDto = new ArrayList<>();
-        trelloBoardsDto.add(new TrelloBoardDto("Board 1", "1", list1));
+        trelloBoardsDto.add(new TrelloBoardDto("1","Board 1", list1));
         //when
         List<TrelloBoard> trelloBoards = trelloMapper.mapToBoards(trelloBoardsDto);
         //then
@@ -40,7 +40,7 @@ public class TrelloMapperTest {
         List<TrelloList> list1 = new ArrayList<>();
         list1.add(new TrelloList("1", "list1", false));
         List<TrelloBoard> trelloBoards = new ArrayList<>();
-        trelloBoards.add(new TrelloBoard("Board 1", "1", list1));
+        trelloBoards.add(new TrelloBoard("1", "Board 1", list1));
         //when
         List<TrelloBoardDto> trelloBoardsDto = trelloMapper.mapToBoardsDto(trelloBoards);
         //then
